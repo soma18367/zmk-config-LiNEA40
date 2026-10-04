@@ -66,6 +66,13 @@
     combos {
         compatible = "zmk,combos";
 
+        CtrlKey {
+            bindings = <&kp LCTRL>;
+            key-positions = <20 21>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
         ZenkakuHankaku {
             bindings = <&kp GRAVE>;
             key-positions = <11 12>;
