@@ -10,13 +10,15 @@ The repository already has the official ZMK Studio integration used by DYA Studi
 - `build.yaml` enables `studio-rpc-usb-uart` and `CONFIG_ZMK_STUDIO=y` on the right half, which is the central half connected to USB.
 - `LiNEA40.keymap` has `&studio_unlock` on Layer 6.
 
-USB connection and the seven-layer Keymap screen were confirmed on the device. The `dya-studio` build at `06f9904` passed all three build jobs. Its right-half UF2 was copied to the right half's XIAO-SENSE bootloader volume. The volume disappeared as the keyboard rebooted, and DYA Studio reconnected to LiNEA40. Studio showed "saved" and the expected Layer 0 and Layer 4 bindings after reconnecting. The copy command reported an extended-attributes error during auto-unmount, so this evidence does not independently prove the flashed binary's exact version. Physical key behavior still needs testing.
+USB connection and the seven-layer Keymap screen were confirmed on the device. The `dya-studio` build at `06f9904` passed all three build jobs. Its right-half UF2 was copied to the right half's XIAO-SENSE bootloader volume. The volume disappeared as the keyboard rebooted, and DYA Studio reconnected to LiNEA40. Studio showed "saved" and the expected Layer 0 and Layer 4 bindings after reconnecting. The copy command reported an extended-attributes error during auto-unmount, but the user subsequently confirmed that the newly added `CtrlKey` combo works on the keyboard. The device does not expose a firmware version through the current Studio diagnostics.
+
+The user also confirmed the following post-flash behavior: Layer 0 Esc/Command tap-hold, Caps, Backslash tap/right Ctrl hold; Layer 4 range and full-screen screenshots and Globe. These checks cover the requested keymap changes. Trackball and Bluetooth behavior after flashing have not been separately reported.
 
 All existing static combos, including `CtrlKey`, remain in the firmware source. DYA Studio cannot display or edit the static combos through its runtime combo screen with the current firmware. No new DYA module or firmware revision is enabled in this stage. The left half and settings-reset target were not flashed.
 
 ## Next stages
 
-1. Test tap/hold keys, screenshots, Globe, `CtrlKey`, trackball, Bluetooth, and Studio unlock on the device before changing firmware modules.
+1. Confirm trackball, Bluetooth, and Studio unlock after flashing before changing firmware modules.
 2. Add one DYA extension at a time, starting with a feature that does not replace an existing input path. Pin and review any new ZMK or module revision, then build both halves and the settings-reset target.
 3. Compare the keymap and static combos against `sync-device-layout` after every stage.
 
