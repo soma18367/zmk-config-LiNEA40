@@ -63,6 +63,69 @@
 };
 
 / {
+#if defined(CONFIG_ZMK_RUNTIME_COMBO)
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
+
+        CtrlKey {
+            slot = <0>;
+            display-name = "CtrlKey";
+            bindings = <&kp LCTRL>;
+            key-positions = <20 21>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        ZenkakuHankaku {
+            slot = <1>;
+            display-name = "ZenkakuHankaku";
+            bindings = <&kp GRAVE>;
+            key-positions = <11 12>;
+        };
+
+        DeleteKey {
+            slot = <2>;
+            display-name = "DeleteKey";
+            bindings = <&kp DEL>;
+            key-positions = <7 8>;
+        };
+
+        InsertKey {
+            slot = <3>;
+            display-name = "InsertKey";
+            bindings = <&kp INS>;
+            key-positions = <6 7>;
+        };
+
+        CenterClick {
+            slot = <4>;
+            display-name = "CenterClick";
+            bindings = <&mkp MB3>;
+            key-positions = <17 16>;
+        };
+
+        RightClick {
+            slot = <5>;
+            display-name = "RightClick";
+            bindings = <&mkp MB2>;
+            key-positions = <18 17>;
+        };
+
+        PrevClick {
+            slot = <6>;
+            display-name = "PrevClick";
+            bindings = <&mkp MB4>;
+            key-positions = <27 28>;
+        };
+
+        ClickNext {
+            slot = <7>;
+            display-name = "ClickNext";
+            bindings = <&mkp MB5>;
+            key-positions = <26 27>;
+        };
+    };
+#else
     combos {
         compatible = "zmk,combos";
 
@@ -108,6 +171,7 @@
             key-positions = <26 27>;
         };
     };
+#endif
 
     behaviors {
         re_kp: sensor_rotate_kp {

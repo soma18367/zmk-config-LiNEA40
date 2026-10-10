@@ -23,3 +23,26 @@ All existing static combos, including `CtrlKey`, remain in the firmware source. 
 3. Compare the keymap and static combos against `sync-device-layout` after every stage.
 
 Runtime combo editing requires cormoran's custom Studio Protocol fork and custom-settings module. Trackball editing requires changes to the PMW3610 driver and input processing. Keep these as separate changes until their compatibility and device behavior are verified. ZMK Studio saves keymap edits in the keyboard's settings; after flashing a new stock keymap, use the Studio restore action only after checking the saved layout.
+
+## Runtime combo build (2026-10-10)
+
+Branch `dya-runtime-combo` enables runtime combos on the central/right half.
+The custom Studio ZMK fork, custom-settings module and runtime-combo module
+are pinned to reviewed commits in `config/west.yml`. The v0.3 compatibility
+branch retains the existing Zephyr/board generation. Build and device checks
+are required before flashing.
+
+The eight static combos are preserved as compile-time runtime defaults on
+the central half (slots 0–7); slots 8–15 are available for new combos. Their
+positions, bindings and layer restrictions are unchanged. The peripheral
+build retains the original static definitions. Normal key bindings, encoder
+bindings and trackball configuration are unchanged. Macro editing is not
+enabled by this change.
+
+Before flashing, save/export the current device keymap and keep the previously
+working UF2 files. Do not flash the settings-reset image or restore stock
+settings as part of the upgrade. The changed ZMK fork is built for both halves;
+flash matching left/right UF2 files and verify Bluetooth, trackball, encoder
+and Studio unlock. Connect DYA Studio, check the eight default combos, edit
+one combo, save to flash, reconnect and verify it persisted. Actual device
+validation remains pending until reported by the user.
