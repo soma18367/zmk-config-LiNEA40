@@ -3,4 +3,5 @@ Vendored from https://github.com/inorichi/zmk-pmw3610-driver at
 
 Local change: rename the device-tree compatible to `inorichi,pmw3610`
 to avoid conflicting with Zephyr 4.1's built-in `pixart,pmw3610` binding.
-The driver algorithms and tuning are unchanged.
+Pass `locking=false` to the newer layer activate/deactivate API so
+automouse keeps its momentary behavior. Driver tuning is unchanged.
