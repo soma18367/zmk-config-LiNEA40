@@ -36,7 +36,9 @@ The eight static combos are preserved as compile-time runtime defaults on
 the central half (slots 0–7); slots 8–15 are available for new combos. Their
 positions, bindings and layer restrictions are unchanged. The peripheral
 build retains the original static definitions. Normal key bindings, encoder
-bindings and trackball configuration are unchanged. Macro editing is not
+bindings and trackball tuning are unchanged. The original PMW3610 driver
+is vendored with a distinct compatible name to avoid the new Zephyr binding;
+RGB LED aliases use the same physical pins. Macro editing is not
 enabled by this change.
 
 Before flashing, save/export the current device keymap and keep the previously
