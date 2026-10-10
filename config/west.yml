@@ -23,7 +23,7 @@ manifest:
       revision: v0.3-branch
     - name: zmk-feature-custom-settings
       remote: cormoran
-      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f
+      revision: 5727f85b3812b9456832784385d951a56f95a569
     - name: zmk-feature-runtime-combo
       remote: cormoran
       revision: d9490e7b5d41c516221d131241009e81740efcee
