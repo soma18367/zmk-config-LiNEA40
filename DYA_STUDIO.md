@@ -28,9 +28,9 @@ Runtime combo editing requires cormoran's custom Studio Protocol fork and custom
 
 Branch `dya-runtime-combo` enables runtime combos on the central/right half.
 The custom Studio ZMK fork, custom-settings module and runtime-combo module
-are pinned to reviewed commits in `config/west.yml`. The v0.3 compatibility
-branch retains the existing Zephyr/board generation. Build and device checks
-are required before flashing.
+are pinned to reviewed commits in `config/west.yml`. The custom Studio fork uses Zephyr 4.1 and the modern
+`xiao_ble/nrf52840/zmk` board target; the build workflow is pinned to a
+compatible revision. Build and device checks are required before flashing.
 
 The eight static combos are preserved as compile-time runtime defaults on
 the central half (slots 0–7); slots 8–15 are available for new combos. Their

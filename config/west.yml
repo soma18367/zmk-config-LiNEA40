@@ -13,7 +13,7 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran
-      revision: b227a48deb420a3caf97ad523a4b661e81112744
+      revision: 1fc72aaff7a42bd533c1f4c9b3f23c5317c745f4
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: inorichi
@@ -23,7 +23,7 @@ manifest:
       revision: v0.3-branch
     - name: zmk-feature-custom-settings
       remote: cormoran
-      revision: 5727f85b3812b9456832784385d951a56f95a569
+      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f
     - name: zmk-feature-runtime-combo
       remote: cormoran
       revision: d9490e7b5d41c516221d131241009e81740efcee
