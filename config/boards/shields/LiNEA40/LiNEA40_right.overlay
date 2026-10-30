@@ -68,3 +68,15 @@
     status = "okay";
     device = <&trackball>;
 };
+
+// Identity defaults preserve the driver output; DYA can tune both streams.
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/runtime-input-processor.dtsi>
+
+&scroll_runtime_input_processor {
+    scale-divisor = <1>;
+};
+
+&trackball_listener {
+    input-processors = <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
+};
