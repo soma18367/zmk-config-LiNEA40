@@ -15,10 +15,19 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran
-      revision: v0.3-branch+dya
+      revision: main+custom-studio-protocol
       import: app/west.yml
-    - name: zmk-module-runtime-config
-      remote: qtrnmr
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
       revision: main
     - name: zmk-pmw3610-driver
       remote: inorichi
