@@ -99,3 +99,13 @@
         status = "disabled";
     };
 };
+
+// XIAO HWMv2: aliases formerly supplied by rgbled_adapter's legacy board overlay.
+/ {
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+    leds { status = "okay"; };
+};
