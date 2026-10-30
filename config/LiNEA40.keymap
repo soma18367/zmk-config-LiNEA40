@@ -64,7 +64,7 @@
 
 / {
     combos {
-        compatible = "zmk,combos";
+        compatible = "zmk,runtime-combos";
 
         CtrlKey {
             bindings = <&kp LCTRL>;
